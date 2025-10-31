@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz App — Clean Light UI</title>
+
+  <!-- Google Font (Poppins) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-container">
+ <header>
+      <h1>JavaScript Quiz</h1>
+      <h3>Time Left: <span id="timer">20:00</span></h3>
+    </header>
+    <!-- Card: Student Details -->
+    <section class="card form-card" id="formCard" aria-labelledby="formHeading">
+      <h2 id="formHeading">Student Details</h2>
+      <p class="muted">Please enter your details to start the quiz</p>
+      <div class="input-grid">
+        <label class="sr-only" for="inp_name">Name</label>
+        <input id="inp_name" type="text" placeholder="Your full name" />
+
+        <label class="sr-only" for="inp_email">Email</label>
+        <input id="inp_email" type="email" placeholder="your@example.com" />
+
+        <label class="sr-only" for="inp_roll">Roll Number</label>
+        <input id="inp_roll" type="text" placeholder="Roll number" />
+
+        <label class="sr-only" for="inp-inst">Institute</label>
+        <input id="inp-inst" type="text" placeholder="Institute name" />
+      </div>
+
+      <div class="card-actions">
+        <button id="submitDetails" class="btn primary">Submit & Continue</button>
+      </div>
+    </section>
+
+    <!-- Card: Start Screen -->
+    <section class="card start-card hidden" id="startCard" aria-labelledby="startHeading">
+      <h2 id="startHeading">Welcome to the Quiz Portal</h2>
+      <div class="summary">
+        <p><strong>Name:</strong> <span id="para-name">—</span></p>
+        <p><strong>Email:</strong> <span id="para-email">—</span></p>
+        <p><strong>Roll No:</strong> <span id="para-roll">—</span></p>
+      </div>
+      <div class="card-actions">
+        <button id="startQuizBtn" class="btn primary large">Start Quiz</button>
+        <button id="editDetails" class="btn ghost">Edit Details</button>
+      </div>
+    </section>
+  
+    <!-- Card: Quiz -->
+    <section class="card quiz-card hidden" id="quizCard" aria-labelledby="quizHeading">
+      <div class="quiz-header">
+        <h3 id="quizHeading">Question <span class="numb">1</span> / <span class="ttlq">0</span></h3>
+        <p id="ques" class="question-text">Question will appear here</p>
+      </div>
+
+      <ul id="opt" class="options" role="list">
+        <li tabindex="0" class="option" role="button" aria-pressed="false"></li>
+        <li tabindex="0" class="option" role="button" aria-pressed="false"></li>
+        <li tabindex="0" class="option" role="button" aria-pressed="false"></li>
+        <li tabindex="0" class="option" role="button" aria-pressed="false"></li>
+      </ul>
+
+      <div class="card-actions">
+        <button id="nextBtn" class="btn primary" disabled>Next</button>
+      </div>
+    </section>
+
+    <!-- Card: Result -->
+    <section class="card result-card hidden" id="resultCard" aria-labelledby="resultHeading">
+      <h2 id="resultHeading">Quiz Result</h2>
+
+      <div class="result-grid">
+        <div>
+          <p><strong>Name:</strong> <span id="res-name">—</span></p>
+          <p><strong>Email:</strong> <span id="res-email">—</span></p>
+          <p><strong>Roll No:</strong> <span id="res-roll">—</span></p>
+          <p><strong>Institute:</strong> <span id="res-inst">—</span></p>
+        </div>
+
+        <div class="result-stats">
+          <p>Total Questions: <strong id="ttl">0</strong></p>
+          <p>Correct: <strong id="ra">0</strong></p>
+          <p>Wrong: <strong id="wa">0</strong></p>
+          <p>Percentage: <strong id="perc">0</strong>%</p>
+          <p class="define" id="defineText"></p>
+        </div>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="circular-progress" aria-hidden="true">
+          <span class="progress-value">0%</span>
+        </div>
+      </div>
+
+      <div class="card-actions">
+        <button id="retryBtn" class="btn primary">Try Again</button>
+        <button id="downloadResult" class="btn ghost">Copy Score</button>
+      </div>
+    </section>
+
+  </main>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Script -->
+  <script src="app.js"></script>
+</body>
+</html>
