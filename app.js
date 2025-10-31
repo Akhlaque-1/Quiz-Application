@@ -1,3 +1,4 @@
+
 /* ========== Sample Question Array ========== */
 const quesArray = [
   {
@@ -44,16 +45,17 @@ const quesArray = [
     },
     answer: "Netscape",
   },
+
   {
     num: 5,
     question: "Inside which HTML element do we put the JavaScript?",
     Option: {
-      a: "<script>",
-      b: "<javascript>",
-      c: "<js>",
-      d: "<scripting>",
+      a: "&lt;script&gt;",
+      b: "&lt;javascript&gt;",
+      c: "&lt;js&gt;",
+      d: "&lt;scripting&gt;",
     },
-    answer: "<script>",
+    answer: "a"
   },
   {
     num: 6,
@@ -62,9 +64,9 @@ const quesArray = [
       a: "//",
       b: "/* */",
       c: "#",
-      d: "<!-- -->",
+      d: "&lt;!-- --&gt;",
     },
-    answer: "//",
+    answer: "a"
   },
   {
     num: 7,
@@ -75,18 +77,18 @@ const quesArray = [
       c: "window.alert()",
       d: "document.output()",
     },
-    answer: "document.write()",
+    answer: "a"
   },
   {
     num: 8,
     question: "What is the correct syntax to refer to an external script called 'app.js'?",
     Option: {
-      a: "<script href='app.js'>",
-      b: "<script name='app.js'>",
-      c: "<script src='app.js'>",
-      d: "<script file='app.js'>",
+      a: "&lt;script href='app.js'&gt;",
+      b: "&lt;script name='app.js'&gt;",
+      c: "&lt;script src='app.js'&gt;",
+      d: "&lt;script file='app.js'&gt;",
     },
-    answer: "<script src='app.js'>",
+    answer: "c"
   },
   {
     num: 9,
@@ -97,7 +99,7 @@ const quesArray = [
       c: "=",
       d: "*",
     },
-    answer: "=",
+    answer: "c"
   },
   {
     num: 10,
@@ -108,9 +110,10 @@ const quesArray = [
       c: "create myFunction()",
       d: "def myFunction()",
     },
-    answer: "function myFunction()",
+    answer: "b"
   },
 ];
+
 
 /* ========== DOM References ========== */
 const formCard = document.getElementById("formCard");
