@@ -46,17 +46,18 @@ const quesArray = [
     answer: "Netscape",
   },
 
-  {
-    num: 5,
-    question: "Inside which HTML element do we put the JavaScript?",
-    Option: {
-      a: "&lt;script&gt;",
-      b: "&lt;javascript&gt;",
-      c: "&lt;js&gt;",
-      d: "&lt;scripting&gt;",
-    },
-    answer: "a"
+ {
+  num: 5,
+  question: "Which built-in method is used to convert a string to lowercase letters in JavaScript?",
+  Option: {
+    a: "toLowerCase()",
+    b: "toLower()",
+    c: "changeCase('lower')",
+    d: "lowerCase()",
   },
+  answer: "toLowerCase()"
+  },
+
   {
     num: 6,
     question: "Which symbol is used for comments in JavaScript?",
@@ -66,7 +67,7 @@ const quesArray = [
       c: "#",
       d: "&lt;!-- --&gt;",
     },
-    answer: "a"
+    answer: "//"
   },
   {
     num: 7,
@@ -77,19 +78,21 @@ const quesArray = [
       c: "window.alert()",
       d: "document.output()",
     },
-    answer: "a"
+    answer: "document.write()"
   },
+
   {
-    num: 8,
-    question: "What is the correct syntax to refer to an external script called 'app.js'?",
-    Option: {
-      a: "&lt;script href='app.js'&gt;",
-      b: "&lt;script name='app.js'&gt;",
-      c: "&lt;script src='app.js'&gt;",
-      d: "&lt;script file='app.js'&gt;",
-    },
-    answer: "c"
+  num: 8,
+  question: "How do you write an alert message in JavaScript?",
+  Option: {
+    a: "msg('Hello World');",
+    b: "alert('Hello World');",
+    c: "alertBox('Hello World');",
+    d: "msgBox('Hello World');",
   },
+  answer: "alert('Hello World');"
+  },
+
   {
     num: 9,
     question: "Which operator is used to assign a value to a variable?",
@@ -99,8 +102,9 @@ const quesArray = [
       c: "=",
       d: "*",
     },
-    answer: "c"
+    answer: "="
   },
+
   {
     num: 10,
     question: "How do you create a function in JavaScript?",
@@ -110,10 +114,9 @@ const quesArray = [
       c: "create myFunction()",
       d: "def myFunction()",
     },
-    answer: "b"
+    answer: "function myFunction()"
   },
 ];
-
 
 /* ========== DOM References ========== */
 const formCard = document.getElementById("formCard");
@@ -129,6 +132,7 @@ const inpInst = document.getElementById("inp-inst");
 const paraName = document.getElementById("para-name");
 const paraEmail = document.getElementById("para-email");
 const paraRoll = document.getElementById("para-roll");
+const paraInstitute = document.getElementById("para-inst");
 
 const quesEl = document.getElementById("ques");
 const optionsList = document.getElementById("opt");
@@ -221,6 +225,7 @@ function handleSubmitDetails() {
   paraName.textContent = inpName.value.trim();
   paraEmail.textContent = inpEmail.value.trim();
   paraRoll.textContent = inpRoll.value.trim();
+  paraInstitute.textContent = inpInst.value.trim();
 
   formCard.classList.add("hidden");
   startCard.classList.remove("hidden");
@@ -447,11 +452,6 @@ Total: ${totalQus}, Correct: ${corrAns}, Wrong: ${wrngAns}, Percentage: ${percEl
   }).catch(() => {
     alert("Could not copy automatically. Here's the result:\n\n" + text);
   });
-}
-
-/* optional helper to open external link */
-function foo() {
-  window.location.href = "https://www.google.com/";
 }
 
 /* initial setup */
